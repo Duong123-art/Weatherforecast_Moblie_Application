@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constSearch"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/conner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            app:layout_constraintVertical_bias="0.1"
+            android:layout_margin="4dp"
+            android:id="@+id/Cardsearchview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:layout_constraintBottom_toTopOf="@+id/apicountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <SearchView
+                    android:layout_weight="1"
+                    android:id="@+id/searchview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:queryHint="Your Country"
+                    android:backgroundTintMode="@color/bluepastel_700" />
+
+                <Button
+                    android:id="@+id/searchbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/bluepastel_700"
+                    android:text="Search"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/apicountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center|bottom"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="Welcom to our app"
+            app:layout_constraintBottom_toTopOf="@+id/apitemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Cardsearchview" />
+
+        <TextView
+            android:id="@+id/apitemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="64sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/apicountry"
+            app:layout_constraintBottom_toTopOf="@id/apistatus"/>
+
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:id="@+id/apistatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/apitemp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="What is the weather like? Please choose your countruy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        app:layout_constraintVertical_chainStyle="packed"
+        android:id="@+id/image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/smile"
+        app:layout_constraintBottom_toTopOf="@+id/temp_min"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constSearch" />
+
+    <TextView
+        android:id="@+id/temp_min"
+        android:layout_width="256dp"
+        android:text="--------------------     -------------------"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/temp_max"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+    <TextView
+        android:id="@+id/temp_max"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="---------------- HAVE A NICE DAY ----------------"
+        app:layout_constraintTop_toBottomOf="@+id/temp_min"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/wind_speed"/>
+
+    <TextView
+        android:id="@+id/wind_speed"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="---------------------------             -----------------------"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintTop_toBottomOf="@+id/temp_max"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/visibility"/>
+
+    <TextView
+        android:id="@+id/visibility"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/wind_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sunrise"/>
+
+    <TextView
+        android:id="@+id/sunrise"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/visibility"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sunset"/>
+
+    <TextView
+        android:id="@+id/sunset"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/sunrise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/humidity"/>
+
+    <TextView
+        android:id="@+id/humidity"
+        android:gravity="center"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/sunset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

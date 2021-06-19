@@ -1,0 +1,22 @@
+package com.example.weather.model;
+
+public class Coord {
+    private float lon;
+    private float lat;
+
+    public void setLon(float lon) {
+        this.lon = lon;
+    }
+
+    public void setLat(float lat) {
+        this.lat = lat;
+    }
+
+    public float getLon() {
+        return lon;
+    }
+
+    public float getLat() {
+        return lat;
+    }
+}
